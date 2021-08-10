@@ -3,52 +3,106 @@
 <head>
   <title>Ityped V.2</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+    #ityped-field {
+    }
+
+    #ityped {
+	width: 100%;
+	height: 0%;
+	color: #EF493E;
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 1.2;
+	font-family: 'Poppins', sans-serif;	
+    }
+
+    #ityped-cursors {
+	width: 100%;
+	height: 100%;
+    }
+    
     .ityped-cursor {
-      font-size: 2.2rem;
-      opacity: 1;
-      -webkit-animation: blink 0.3s infinite;
-      -moz-animation: blink 0.3s infinite;
-      animation: blink 0.3s infinite;
-      animation-direction: alternate;
+	font-size: 36px;
+	opacity: 1;
+	-webkit-animation: blink 0.5s infinite;
+	-moz-animation: blink 0.5s infinite;
+	animation: blink 0.5s infinite;
+	animation-direction: alternate;
+    }
+
+    .ityped-cursor-0 {
+	color: green;
+    }
+
+    .ityped-cursor-1 {
+	color: blue;
     }
 
     @keyframes blink {
       100% {
-        opacity: 0;
+        opacity: 0.2;
       }
     }
 
     @-webkit-keyframes blink {
       100% {
-        opacity: 0;
+        opacity: 0.2;
       }
     }
 
     @-moz-keyframes blink {
       100% {
-        opacity: 0;
+        opacity: 0.2;
       }
     }
   </style>
 </head>
 
 <body>
-  <div id="app">
-    <span id="ityped"></span>
+  <h1>Hello!</h1>
+  <div id="ityped-field" style="width: 800px">
+    <div id="ityped"></div>
+    <div id="ityped-cursors"></div>
   </div>
-  <div>
-    <input type="text" id="placeholder">
-  </div>
-  <script src="https://unpkg.com/ityped@1.0.2"></script>
-  <script>
+  <script type="text/javascript" src="./dist/index.js"></script>
+  <script type="text/javascript">
     ityped.init(document.querySelector("#ityped"), {
-      showCursor: false,
-      strings: ['Very nice project!', 'Yeah!', 'Shure, awesome!']
-    })
-
-    ityped.init("#placeholder", {
-      placeholder: true,
-      showCursor: false
+	showCursor: true,
+	disableBackTyping: true,
+	typeSpeed: 150,
+	work: [
+            [{id: 0, append: "M"}],
+            [{id: 0, append: "u"}],
+            [{id: 0, append: "l"}],
+            [{id: 0, append: "t"}],
+            [{id: 0, append: "i"}],
+            [{id: 0, append: "-"}],
+            [{id: 0, append: "c"}],
+            [{id: 0, append: "u"}],
+            [],
+            [{id: 0, backspace: 1}],
+            [{id: 0, backspace: 1}],
+            [{id: 0, backspace: 1}],
+            [                      {id: 1, goto: 5}],
+            [],
+            [                      {id: 1, append: " "}],
+            [],
+            [{id: 0, append: "p"}, {id: 1, append: "C"}],
+            [],
+            [                      {id: 1, append: "u"}],
+            [                      {id: 1, append: "r"}],
+            [                      {id: 1, append: "s"}],
+            [{id: 0, append: "l"}, {id: 1, append: "o"}],
+            [                      {id: 1, append: "r"}],
+            [{id: 0, append: "e"}],
+            [{id: 0, goto: 15}],
+            [],
+            [{id: 0, append: "s"}],
+            [],
+            [                      {id: 1, goto: 8}],
+        ]
     })
   </script>
 </body>
