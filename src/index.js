@@ -155,7 +155,7 @@ export const init = (element, properties) => {
                 cursors.appendChild(s.cursor);
             }
             let span = s.pos === 0 ? null : element.childNodes[s.pos - 1];
-            let rect = span ? span.getBoundingClientRect() : {right: 0}
+            let rect = span ? span.getBoundingClientRect() : {right: eRect.left}
             let cRect = s.cursor.getBoundingClientRect();
             let keyNum = parseFloat(key);
             s.cursor.style.left = `${rect.right - (cRect.width * 0.5) - (keyNum * cRect.width) - eRect.left}px`;
